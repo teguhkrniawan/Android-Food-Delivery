@@ -10,7 +10,10 @@ import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import androidx.viewpager.widget.ViewPager
+import com.asksira.loopingviewpager.LoopingViewPager
 import com.teguh.bfd.R
+import com.teguh.bfd.adapter.MyBestDealsAdapter
 import com.teguh.bfd.adapter.MyPopularCategoriesAdapter
 
 class HomeFragment : Fragment() {
@@ -18,6 +21,17 @@ class HomeFragment : Fragment() {
     private lateinit var homeViewModel: HomeViewModel
 
     private lateinit var recyclerPopular: RecyclerView
+    private lateinit var viewpagerBestdeals: LoopingViewPager
+
+    override fun onResume() {
+        super.onResume()
+        //viewpagerBestdeals.resumeAutoScroll()
+    }
+
+    override fun onPause() {
+       // viewpagerBestdeals.pauseAutoScroll()
+        super.onPause()
+    }
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -36,11 +50,19 @@ class HomeFragment : Fragment() {
             recyclerPopular.adapter = adapter
         })
 
+        homeViewModel.bestdelasList.observe(viewLifecycleOwner, Observer {
+            val listData = it
+            val adapter = MyBestDealsAdapter(requireContext(), listData, true)
+            viewpagerBestdeals.adapter = adapter
+        })
+
         return root
     }
 
     private fun initView(itemView: View) {
+        viewpagerBestdeals = itemView.findViewById(R.id.viewpager_big_deals) as LoopingViewPager
         recyclerPopular = itemView.findViewById(R.id.rv_populer_category) as RecyclerView
+
         recyclerPopular.setHasFixedSize(true)
         recyclerPopular.layoutManager = LinearLayoutManager(context, RecyclerView.HORIZONTAL, false)
     }

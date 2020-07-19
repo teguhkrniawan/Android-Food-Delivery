@@ -14,6 +14,6 @@
     <string name="menu_gallery">Gallery</string>
     <string name="menu_slideshow">Slideshow</string>
     <string name="popular_category">Popular Category</string>
-    <string name="populer_categories">Populer Categories</string>
-    <string name="big_deals_for_you">Big Deals For You</string>
+    <string name="populer_categories">Menu Populer</string>
+    <string name="big_deals_for_you">Sedang Promo</string>
 </resources>
