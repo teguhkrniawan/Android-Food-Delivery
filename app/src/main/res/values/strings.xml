@@ -1,4 +1,5 @@
 <resources>
     <string name="app_name">BFD</string>
     <string name="sign_in_with_phone">Sign In With Phone</string>
+    <string name="silahkan_tunggu">Tunggu Sebentar</string>
 </resources>

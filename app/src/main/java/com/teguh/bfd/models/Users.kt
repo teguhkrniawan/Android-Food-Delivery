@@ -5,4 +5,5 @@ class Users {
     var address: String = ""
     var phone: String = ""
     var uid: String = ""
+
 }
