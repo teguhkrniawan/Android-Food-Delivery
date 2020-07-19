@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "944168493384",
+    "firebase_url": "https://baganapi-food-delivery.firebaseio.com",
+    "project_id": "baganapi-food-delivery",
+    "storage_bucket": "baganapi-food-delivery.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:944168493384:android:60dbeaf21fc085f552137d",
+        "android_client_info": {
+          "package_name": "com.teguh.bfd"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "944168493384-gt1lflp65q5tva1ngebuuui54ccur8v2.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.teguh.bfd",
+            "certificate_hash": "06badd977a36e852bcbb4581154ec4bd2345aadb"
+          }
+        },
+        {
+          "client_id": "944168493384-pq93n3ocmtme3l8g8gs7t0j5c04gj0o2.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBtgMIatGhr1SolKfl8jSM1opVIzGrNqnc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "944168493384-pq93n3ocmtme3l8g8gs7t0j5c04gj0o2.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
