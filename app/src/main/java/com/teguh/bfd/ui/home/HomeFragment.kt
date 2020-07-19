@@ -4,6 +4,8 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.view.animation.AnimationUtils
+import android.view.animation.LayoutAnimationController
 import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
@@ -19,6 +21,7 @@ import com.teguh.bfd.adapter.MyPopularCategoriesAdapter
 class HomeFragment : Fragment() {
 
     private lateinit var homeViewModel: HomeViewModel
+    private lateinit var layoutAnimationController: LayoutAnimationController
 
     private lateinit var recyclerPopular: RecyclerView
     private lateinit var viewpagerBestdeals: LoopingViewPager
@@ -48,6 +51,7 @@ class HomeFragment : Fragment() {
             val listData = it
             val adapter = MyPopularCategoriesAdapter(requireContext(), listData)
             recyclerPopular.adapter = adapter
+            recyclerPopular.layoutAnimation = layoutAnimationController
         })
 
         homeViewModel.bestdelasList.observe(viewLifecycleOwner, Observer {
@@ -60,6 +64,9 @@ class HomeFragment : Fragment() {
     }
 
     private fun initView(itemView: View) {
+        // insialisasi animasi
+        layoutAnimationController = AnimationUtils.loadLayoutAnimation(context, R.anim.layout_item_from_left)
+
         viewpagerBestdeals = itemView.findViewById(R.id.viewpager_big_deals) as LoopingViewPager
         recyclerPopular = itemView.findViewById(R.id.rv_populer_category) as RecyclerView
 
