@@ -16,4 +16,6 @@
     <string name="popular_category">Popular Category</string>
     <string name="populer_categories">Menu Populer</string>
     <string name="big_deals_for_you">Sedang Promo</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

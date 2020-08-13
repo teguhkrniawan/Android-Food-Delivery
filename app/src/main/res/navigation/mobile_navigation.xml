@@ -18,6 +18,12 @@
         tools:layout="@layout/fragment_category" />
 
     <fragment
+        android:id="@+id/nav_food"
+        android:name="com.teguh.bfd.ui.foodlist.FoodListFragment"
+        android:label="Foods"
+        tools:layout="@layout/fragment_food_list"/>
+
+    <fragment
         android:id="@+id/nav_slideshow"
         android:name="com.teguh.bfd.ui.slideshow.SlideshowFragment"
         android:label="@string/menu_slideshow"

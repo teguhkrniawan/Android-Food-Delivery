@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="200dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    app:cardMaxElevation="10dp"
+    app:cardCornerRadius="0dp"
+    android:layout_marginBottom="8dp">
+
+        <RelativeLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+                <ImageView
+                    android:id="@+id/img_food_item"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:scaleType="fitXY"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentBottom="true"
+                    android:orientation="horizontal"
+                    android:background="@color/overlay_food_item"
+                    android:padding="10dp"
+                    android:weightSum="10">
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="8"
+                            android:gravity="center_vertical"
+                            android:orientation="vertical">
+
+                                <TextView
+                                    android:id="@+id/txt_name_food_item"
+                                    android:textSize="20sp"
+                                    android:textColor="@android:color/white"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:textStyle="bold"
+                                    tools:text="Rendang Indonesia"/>
+
+                                <TextView
+                                    android:id="@+id/txt_price_food_item"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:textColor="@android:color/white"
+                                    android:textSize="18sp"
+                                    tools:text="IDR. 12K"/>
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="2"
+                            android:weightSum="2"
+                            android:gravity="center_vertical"
+                            android:orientation="horizontal">
+
+                                <ImageView
+                                    android:id="@+id/img_fav_food_item"
+                                    android:layout_width="0dp"
+                                    android:layout_weight="1"
+                                    android:layout_height="wrap_content"
+                                    android:tint="@android:color/white"
+                                    android:src="@drawable/ic_baseline_favorite_border"/>
+
+                                <ImageView
+                                    android:id="@+id/img_cart_food_item"
+                                    android:layout_width="0dp"
+                                    android:layout_weight="1"
+                                    android:layout_height="wrap_content"
+                                    android:tint="@android:color/white"
+                                    android:src="@drawable/ic_outline_shopping_cart_24"/>
+
+                        </LinearLayout>
+
+                </LinearLayout>
+
+        </RelativeLayout>
+
+</androidx.cardview.widget.CardView>

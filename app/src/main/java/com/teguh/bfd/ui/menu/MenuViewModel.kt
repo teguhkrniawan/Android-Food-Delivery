@@ -1,5 +1,6 @@
 package com.teguh.bfd.ui.menu
 
+import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
@@ -59,6 +60,7 @@ class MenuViewModel : ViewModel(), ICategoriesCallbackListener {
                     model!!.menu_id == itemSnapshot.key // ini buat ambil menu_01, menu_02, dst
                     templist.add(model)
                 }
+                Log.i("INFO", "list dari model category: ${templist.size}")
                 categoriesCallbakListener.onCategoriesLoadSuccess(templist)
             }
 

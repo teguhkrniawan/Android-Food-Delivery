@@ -1,9 +1,11 @@
 package com.teguh.bfd.Utils
 
+import com.teguh.bfd.models.Categories
 import com.teguh.bfd.models.Users
 
 object Commons {
 
+    var categorySelected: Categories? = null
     val CATEGORY_REF: String = "Category"
     val FULL_WIDTH_COLUMN: Int = 1
     val COUNT_ITEM_DEFAULT: Int = 0
