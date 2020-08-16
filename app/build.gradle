@@ -76,4 +76,10 @@ dependencies {
 
     // Event Bus
     implementation 'org.greenrobot:eventbus:3.2.0'
+
+    // tampilan untuk tambah kurang item di detail
+    implementation 'com.cepheuen.elegant-number-button:lib:1.0.2'
+
+    // tampilan untuk meletakkan fab ditengah (asumsi aku)
+    implementation 'com.github.andremion:counterfab:1.2.0'
 }

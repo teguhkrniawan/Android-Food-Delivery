@@ -15,6 +15,7 @@ import androidx.drawerlayout.widget.DrawerLayout
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
 import com.teguh.bfd.eventbus.CategoryClick
+import com.teguh.bfd.eventbus.FoodClick
 import org.greenrobot.eventbus.EventBus
 import org.greenrobot.eventbus.Subscribe
 import org.greenrobot.eventbus.ThreadMode
@@ -41,7 +42,7 @@ class MainActivity : AppCompatActivity() {
         // menu should be considered as top level destinations.
         appBarConfiguration = AppBarConfiguration(
             setOf(
-                R.id.nav_home, R.id.nav_menu, R.id.nav_slideshow
+                R.id.nav_home, R.id.nav_menu, R.id.nav_detail_food
             ), drawerLayout
         )
         setupActionBarWithNavController(navController, appBarConfiguration)
@@ -69,11 +70,21 @@ class MainActivity : AppCompatActivity() {
         return navController.navigateUp(appBarConfiguration) || super.onSupportNavigateUp()
     }
 
+    //eventbus saat categoriu dipilih melalui activity ini
     @Subscribe(sticky = true, threadMode = ThreadMode.MAIN)
     fun onCategorySelected(event: CategoryClick){ //walaupun never used tapi jalan kok
-        if (event.isSuccess){
+        if (event.isSuccess){ // jika sukses maka akan pindah ke fragment food
             //Toast.makeText(this, "Click to "+event.category.name, Toast.LENGTH_SHORT).show()
             findNavController(R.id.nav_host_fragment).navigate(R.id.nav_food)
+        }
+    }
+
+    // event bus saat food dipilih melalui activity ini (parent dri fragments food)
+    @Subscribe(sticky = true, threadMode = ThreadMode.MAIN)
+    fun onFoodSelected(event: FoodClick){
+        if (event.isSuccess){
+            //Toast.makeText(this, "Kamu mengklik ${event.food.name}", Toast.LENGTH_SHORT).show()
+            findNavController(R.id.nav_host_fragment).navigate(R.id.nav_detail_food)
         }
     }
 }
